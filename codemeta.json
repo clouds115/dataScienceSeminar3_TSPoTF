@@ -1,0 +1,52 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "applicationCategory": "SoftwareSourceCode",
+    "author": [
+        {
+            "affiliation": {
+                "name": "Universidad Politecnica de Madrid - ETSIINF",
+                "@type": "Organization"
+            },
+            "email": "claudio.catalano.leiva@alumnos.upm.es",
+            "familyName": "Catalano Leiva",
+            "givenName": "Claudio Vincenzo",
+            "@id": "https://github.com/clouds115",
+            "@type": "Person"
+        }
+    ],
+    "codeRepository": "https://github.com/clouds115/dataScienceSeminar3_TSPoTF",
+    "dateCreated": "2026-02-26",
+    "dateModified": "2026-02-26",
+    "datePublished": "2026-02-26",
+    "description": "Data Science Seminar 3 - The Scientific Paper of the Future: Seminar Work",
+    "downloadUrl": "https://github.com/clouds115/dataScienceSeminar3_TSPoTF/releases",
+    "identifier": "https://doi.org/10.5281/zenodo.18791948",
+    "license": "https://spdx.org/licenses/Apache-2.0",
+    "name": "dataScienceSeminar3_TSPoTF",
+    "programmingLanguage": "Python",
+    "referencePublication": [
+        {
+            "author": [
+                {
+                    "affiliation": {
+                        "name": "Universidad Politecnica de Madrid - ETSIINF",
+                        "@type": "Organization"
+                    },
+                    "email": "claudio.catalano.leiva@alumnos.upm.es",
+                    "familyName": "Catalano Leiva",
+                    "givenName": "Claudio Vincenzo",
+                    "@type": "Person"
+                }
+            ],
+            "datePublished": "2026",
+            "identifier": "10.5281/zenodo.18791949",
+            "name": "If you use this software, please cite it as below.",
+            "url": "https://doi.org/10.5281/zenodo.18791949",
+            "@type": "ScholarlyArticle"
+        }
+    ],
+    "releaseNotes": "Patch for the initial release to update README.md and optimize calculate_distance script.\n\nUsage: python calculate_distance.py\n\n**Full Changelog**: https://github.com/clouds115/dataScienceSeminar3_TSPoTF/commits/v1.0.1",
+    "version": "v1.0.1",
+    "issueTracker": "https://github.com/clouds115/dataScienceSeminar3_TSPoTF/issues",
+    "@type": "SoftwareSourceCode"
+}

@@ -1,4 +1,7 @@
 # dataScienceSeminar3_TSPoTF
+
+[![DOI](https://zenodo.org/badge/1167821188.svg)](https://doi.org/10.5281/zenodo.18791948)
+
 ## Data Science Seminar 3 - The Scientific Paper of the Future: Seminar Work
 
 ## Description:
