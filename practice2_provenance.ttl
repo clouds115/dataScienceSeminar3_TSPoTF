@@ -1,0 +1,89 @@
+# PROV Diagram for exercise 2 of the data science seminar - The Scientific Paper of the Future
+# Author: Claudio Vincenzo Catalano Leiva
+# I generated the diagram after writing this with the following tool: https://www.ldf.fi/service/rdf-grapher
+
+@prefix ex: <http://example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Agents del exercise
+ex:Laura a prov:Agent .
+ex:Jack a prov:Agent .
+ex:Jill a prov:Agent .
+ex:Peter a prov:Agent .
+ex:Paula a prov:Agent .
+ex:Zack a prov:Agent .
+
+# Plans - I made them as plans only because I will use them in the activites (maybe they can be entities too?)
+# Plan to make the survey
+ex:Survey_Plan a prov:Plan;
+    rdfs:label "Plan for Conducting Surveys" .
+
+# Plan to revise the survey
+ex:Survey_Revision_Plan a prov:Plan ;
+    rdfs:label "Plan for Revising the Survey" .
+
+# Plan to write the paper
+ex:Paper_Plan a prov:Plan;
+    rdfs:label "Plan for Analyzing Data and Writing Paper" .
+
+# Entities
+ex:Survey_V1 a prov:Entity ;
+    rdfs:label "First Survey Design" ;
+    prov:wasGeneratedBy ex:Design_Activity .
+
+ex:Survey_V2 a prov:Entity ;
+    rdfs:label "Second Survey Design" ;
+    prov:wasRevisionOf ex:Survey_V1 ;
+    prov:wasGeneratedBy ex:Revise_Activity .
+
+ex:Data_1 a prov:Entity ;
+    prov:wasGeneratedBy ex:Conduct_Survey_1 .
+
+ex:Data_2 a prov:Entity ;
+    prov:wasGeneratedBy ex:Conduct_Survey_2 .
+
+ex:Statistics_Package a prov:Entity ;
+    rdfs:label "Statistical Analysis Package" .
+
+ex:Final_Paper a prov:Entity ;
+    prov:wasGeneratedBy ex:Analysis_Activity ;
+    prov:wasDerivedFrom ex:Data_1, ex:Data_2 .
+
+# Activities & Simplified Associations
+# Laura designs a survey about student financial support
+ex:Design_Activity a prov:Activity ;
+    rdfs:label "Designing the First Survey" ;
+    prov:wasAssociatedWith ex:Laura ;
+    prov:used ex:Survey_Plan ;
+    prov:generated ex:Survey_V1 .
+
+# Jack and Jill conduct the survey with the first design
+ex:Conduct_Survey_1 a prov:Activity ;
+    rdfs:label "Conducting the First Survey" ;
+    prov:used ex:Survey_V1 ;
+    prov:wasAssociatedWith ex:Jack, ex:Jill ;
+    prov:used ex:Survey_Plan ;
+    prov:generated ex:Data_1 .
+
+# Laura revises the survey a year later
+ex:Revise_Activity a prov:Activity ;
+    rdfs:label "Revising the Survey" ;
+    prov:used ex:Survey_V1 ;
+    prov:wasAssociatedWith ex:Laura ;
+    prov:used ex:Survey_Revision_Plan ;
+    prov:generated ex:Survey_V2 .
+
+ex:Conduct_Survey_2 a prov:Activity ;
+    rdfs:label "Conducting the Second Survey" ;
+    prov:used ex:Survey_V2 ;
+    prov:wasAssociatedWith ex:Peter, ex:Paula ;
+    prov:used ex:Survey_Plan ;
+    prov:generated ex:Data_2 .
+
+ex:Analysis_Activity a prov:Activity ;
+    rdfs:label "Analyzing Data and Writing Paper" ;
+    prov:used ex:Data_1, ex:Data_2, ex:Statistics_Package ;
+    prov:wasAssociatedWith ex:Zack ;
+    prov:used ex:Paper_Plan ;
+    prov:generated ex:Final_Paper .
