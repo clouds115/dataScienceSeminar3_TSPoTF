@@ -55,30 +55,30 @@ ex:Final_Paper a prov:Entity ;
 ex:Design_Activity a prov:Activity ;
     rdfs:label "Designing the First Survey" ;
     prov:wasAssociatedWith ex:Laura ;
-    prov:used ex:Survey_Plan ;
+    prov:used ex:Survey_Plan .
 
 # Jack and Jill conduct the survey with the first design
 ex:Conduct_Survey_1 a prov:Activity ;
     rdfs:label "Conducting the First Survey" ;
     prov:used ex:Survey_V1 ;
     prov:wasAssociatedWith ex:Jack, ex:Jill ;
-    prov:used ex:Survey_Plan ;
+    prov:used ex:Survey_Plan .
 
 # Laura revises the survey a year later
 ex:Revise_Activity a prov:Activity ;
     rdfs:label "Revising the Survey" ;
     prov:used ex:Survey_V1 ;
     prov:wasAssociatedWith ex:Laura ;
-    prov:used ex:Survey_Revision_Plan ;
+    prov:used ex:Survey_Revision_Plan .
 
 ex:Conduct_Survey_2 a prov:Activity ;
     rdfs:label "Conducting the Second Survey" ;
     prov:used ex:Survey_V2 ;
     prov:wasAssociatedWith ex:Peter, ex:Paula ;
-    prov:used ex:Survey_Plan ;
+    prov:used ex:Survey_Plan .
 
 ex:Analysis_Activity a prov:Activity ;
     rdfs:label "Analyzing Data and Writing Paper" ;
     prov:used ex:Data_1, ex:Data_2, ex:Statistics_Package ;
     prov:wasAssociatedWith ex:Zack ;
-    prov:used ex:Paper_Plan ;
+    prov:used ex:Paper_Plan .
